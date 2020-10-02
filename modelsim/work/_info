@@ -1,0 +1,135 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/student/Desktop/tp78/modelsim
+Edirection
+w1555516444
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+8/home/student/Desktop/tp78/vhdl/direction-entity.vhd
+F/home/student/Desktop/tp78/vhdl/direction-entity.vhd
+l0
+L4
+V7ceF4JDHBQoH94ig9SS`U2
+!s100 NC7a>7Q[2lEH]?MPoHRF20
+Z3 OV;C;10.5b;63
+32
+Z4 !s110 1557222110
+!i10b 1
+Z5 !s108 1557222110.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/student/Desktop/tp78/vhdl/direction-entity.vhd|
+!s107 /home/student/Desktop/tp78/vhdl/direction-entity.vhd|
+!i113 1
+Z6 o-work work -2002 -explicit
+Z7 tExplicit 1 CvgOpt 0
+Artl
+w1557000472
+R1
+R2
+DEx4 work 9 direction 0 22 7ceF4JDHBQoH94ig9SS`U2
+8/home/student/Desktop/tp78/vhdl/direction-rtl.vhd
+F/home/student/Desktop/tp78/vhdl/direction-rtl.vhd
+l4
+L1
+V7YPJJ?Yk^XKQj=P7H=da63
+!s100 o`22HnP`LDgUK]iCjihWI2
+R3
+32
+Z8 !s110 1557222111
+!i10b 1
+R5
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/student/Desktop/tp78/vhdl/direction-rtl.vhd|
+!s107 /home/student/Desktop/tp78/vhdl/direction-rtl.vhd|
+!i113 1
+R6
+R7
+Emovement
+Z9 w1557218929
+R1
+R2
+R0
+8/home/student/Desktop/tp78/vhdl/movement-entity.vhd
+F/home/student/Desktop/tp78/vhdl/movement-entity.vhd
+l0
+L4
+VPO^DU?]KW<]Sil:gaMePU3
+!s100 bo^4VY_J2hK8OJIGJhTe]3
+R3
+32
+R8
+!i10b 1
+Z10 !s108 1557222111.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/student/Desktop/tp78/vhdl/movement-entity.vhd|
+!s107 /home/student/Desktop/tp78/vhdl/movement-entity.vhd|
+!i113 1
+R6
+R7
+Artl
+R1
+R2
+Z11 DEx4 work 8 movement 0 22 PO^DU?]KW<]Sil:gaMePU3
+Z12 8/home/student/Desktop/tp78/vhdl/movement-rtl.vhd
+Z13 F/home/student/Desktop/tp78/vhdl/movement-rtl.vhd
+l3
+L1
+Z14 V53Qj2:Q@O9JXe:EbWEFE82
+Z15 !s100 ezDdE971C<cn^SXg_zzDI1
+R3
+32
+R8
+!i10b 1
+R10
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/student/Desktop/tp78/vhdl/movement-rtl.vhd|
+!s107 /home/student/Desktop/tp78/vhdl/movement-rtl.vhd|
+!i113 1
+R6
+R7
+Emovement_full
+w1557218914
+R1
+R2
+R0
+8/home/student/Desktop/tp78/vhdl/movement_full-entity.vhd
+F/home/student/Desktop/tp78/vhdl/movement_full-entity.vhd
+l0
+L4
+V[^GoBZeY3^8S]B:2OJ7EI3
+!s100 7dXQh:o?^L;3zWEC2W4Kz1
+R3
+32
+R4
+!i10b 1
+R5
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/student/Desktop/tp78/vhdl/movement_full-entity.vhd|
+!s107 /home/student/Desktop/tp78/vhdl/movement_full-entity.vhd|
+!i113 1
+R6
+R7
+Artl
+w1557219359
+R1
+R2
+DEx4 work 13 movement_full 0 22 [^GoBZeY3^8S]B:2OJ7EI3
+8/home/student/Desktop/tp78/vhdl/movement_full-rtl.vhd
+F/home/student/Desktop/tp78/vhdl/movement_full-rtl.vhd
+l15
+L1
+VjLO[j<nDm?2BWW9SRj[kO3
+!s100 KUCkRJjR8=48khA7GPod`3
+R3
+32
+R4
+!i10b 1
+R5
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/student/Desktop/tp78/vhdl/movement_full-rtl.vhd|
+!s107 /home/student/Desktop/tp78/vhdl/movement_full-rtl.vhd|
+!i113 1
+R6
+R7

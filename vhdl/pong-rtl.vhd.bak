@@ -1,0 +1,54 @@
+ARCHITECTURE rtl OF pong IS
+
+	COMPONENT MOVEMENT_FULL
+		PORT ( ext_change, enable, reset, clock: IN std_logic;
+	 		pos : OUT std_logic_vector(WIDTH - 1 downto 0);
+			dir_o : OUT std_logic);
+	END COMPONENT;
+
+	COMPONENT clock_divider
+		PORT ( clock, reset : IN std_logic;
+			enable : OUT std_logic);
+
+	SIGNAL X_pos : std_logic_vector(11 downto 0);
+	SIGNAL Y_pos : std_logic_vector(8 downto 0);
+	SIGNAL s_50MHz_clock        : std_logic;
+	SIGNAL s_reset              : std_logic; 
+
+BEGIN
+	
+	clock <= s_50MHz_clock;	
+	n_reset <= NOT(s_reset);
+	user <= "00000000";
+	sys <= "00000000";
+
+	display : FOR y IN 8 DOWNTO 0 GENERATE
+		oneline : FOR x IN 11 DOWNTO 0 GENERATE
+			playfield(y*12+x) <= Y_pos(y) AND X_pos(X);
+		END GENERATE oneline;
+	END GENERATE display;
+
+	moveX : MOVEMENT_FULL
+	GENERIC MAP(INIT => "000000100000",
+			WIDTH => 12)
+	PORT MAP(enable => '1',
+			ext_change => '0',
+			reset => n_reset,
+			clock => s_50MHz_clock,
+			pos => X_pos);
+	
+	moveY : MOVEMENT_FULL
+	GENERIC MAP(INIT => "000010000",
+			WIDTH => 9)
+	PORT MAP(enable => '1',
+			ext_change => '0',
+			reset => n_reset,
+			clock => s_50MHz_clock,
+			pos => Y_pos);
+	
+	clock_div : clock_divider 
+	PORT MAP( clock => s_50MHz_clock,
+			enable => '1',
+			reset => s_reset);
+
+END ARCHITECTURE rtl; 

@@ -1,0 +1,441 @@
+Analysis & Synthesis report for pong
+Thu May 16 16:13:33 2019
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: movement_full:moveX
+ 11. Parameter Settings for User Entity Instance: movement_full:moveX|movement:move
+ 12. Parameter Settings for User Entity Instance: movement_full:moveY
+ 13. Parameter Settings for User Entity Instance: movement_full:moveY|movement:move
+ 14. Port Connectivity Checks: "movement_full:moveY"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu May 16 16:13:33 2019       ;
+; Quartus Prime Version              ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
+; Revision Name                      ; pong                                        ;
+; Top-level Entity Name              ; pong                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 319                                         ;
+;     Total combinational functions  ; 315                                         ;
+;     Dedicated logic registers      ; 127                                         ;
+; Total registers                    ; 127                                         ;
+; Total pins                         ; 128                                         ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE30F23C8       ;                    ;
+; Top-level entity name                                            ; pong               ; pong               ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++-------------------------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; File Name with User-Entered Path                ; Used in Netlist ; File Type       ; File Name with Absolute Path                             ; Library ;
++-------------------------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+; ../../../clignotante/vhdl/divider-entity.vhdl   ; yes             ; User VHDL File  ; /home/student/clignotante/vhdl/divider-entity.vhdl       ;         ;
+; ../../../clignotante/vhdl/divider-behavior.vhdl ; yes             ; User VHDL File  ; /home/student/clignotante/vhdl/divider-behavior.vhdl     ;         ;
+; ../vhdl/score-rtl.vhd                           ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/score-rtl.vhd            ;         ;
+; ../vhdl/score-entity.vhd                        ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/score-entity.vhd         ;         ;
+; ../vhdl/pong-rtl.vhd                            ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/pong-rtl.vhd             ;         ;
+; ../vhdl/pong-entity.vhd                         ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/pong-entity.vhd          ;         ;
+; ../vhdl/movement_full-rtl.vhd                   ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/movement_full-rtl.vhd    ;         ;
+; ../vhdl/movement_full-entity.vhd                ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/movement_full-entity.vhd ;         ;
+; ../vhdl/movement-rtl.vhd                        ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/movement-rtl.vhd         ;         ;
+; ../vhdl/movement-entity.vhd                     ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/movement-entity.vhd      ;         ;
+; ../vhdl/direction-rtl.vhd                       ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/direction-rtl.vhd        ;         ;
+; ../vhdl/direction-entity.vhd                    ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/direction-entity.vhd     ;         ;
+; ../vhdl/debouncer-rtl.vhd                       ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/debouncer-rtl.vhd        ;         ;
+; ../vhdl/debouncer-entity.vhd                    ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/debouncer-entity.vhd     ;         ;
+; ../vhdl/collision-rtl.vhd                       ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/collision-rtl.vhd        ;         ;
+; ../vhdl/collision-entity.vhd                    ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/collision-entity.vhd     ;         ;
+; ../vhdl/bat-rtl.vhd                             ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/bat-rtl.vhd              ;         ;
+; ../vhdl/bat-entity.vhd                          ; yes             ; User VHDL File  ; /home/student/Desktop/tp78/vhdl/bat-entity.vhd           ;         ;
++-------------------------------------------------+-----------------+-----------------+----------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 319         ;
+;                                             ;             ;
+; Total combinational functions               ; 315         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 94          ;
+;     -- 3 input functions                    ; 30          ;
+;     -- <=2 input functions                  ; 191         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 231         ;
+;     -- arithmetic mode                      ; 84          ;
+;                                             ;             ;
+; Total registers                             ; 127         ;
+;     -- Dedicated logic registers            ; 127         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 128         ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; clock~input ;
+; Maximum fan-out                             ; 127         ;
+; Total fan-out                               ; 1579        ;
+; Average fan-out                             ; 2.26        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                 ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                        ; Entity Name   ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+---------------+--------------+
+; |pong                        ; 315 (110)           ; 127 (0)                   ; 0           ; 0            ; 0       ; 0         ; 128  ; 0            ; |pong                                      ; pong          ; work         ;
+;    |bat:bat_disp|            ; 14 (14)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|bat:bat_disp                         ; bat           ; work         ;
+;    |clock_divider:clock_div| ; 35 (35)             ; 25 (25)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|clock_divider:clock_div              ; clock_divider ; work         ;
+;    |collision:bump|          ; 20 (20)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|collision:bump                       ; collision     ; work         ;
+;    |debouncer:button_down|   ; 2 (2)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|debouncer:button_down                ; debouncer     ; work         ;
+;    |debouncer:button_up|     ; 2 (2)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|debouncer:button_up                  ; debouncer     ; work         ;
+;    |movement_full:moveX|     ; 20 (0)              ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|movement_full:moveX                  ; movement_full ; work         ;
+;       |direction:direct|     ; 3 (3)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|movement_full:moveX|direction:direct ; direction     ; work         ;
+;       |movement:move|        ; 17 (17)             ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|movement_full:moveX|movement:move    ; movement      ; work         ;
+;    |movement_full:moveY|     ; 12 (0)              ; 10 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|movement_full:moveY                  ; movement_full ; work         ;
+;       |direction:direct|     ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|movement_full:moveY|direction:direct ; direction     ; work         ;
+;       |movement:move|        ; 11 (11)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|movement_full:moveY|movement:move    ; movement      ; work         ;
+;    |score:scores|            ; 100 (100)           ; 62 (62)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pong|score:scores                         ; score         ; work         ;
++------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 127   ;
+; Number of registers using Synchronous Clear  ; 87    ;
+; Number of registers using Synchronous Load   ; 32    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 88    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |pong|score:scores|s_user_score[16]                        ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |pong|score:scores|s_sys_score[22]                         ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; Yes        ; |pong|clock_divider:clock_div|s_current_state[14]          ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |pong|bat:bat_disp|s_current_state[7]                      ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; Yes        ; |pong|movement_full:moveX|movement:move|s_current_state[6] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 14 LEs               ; 7 LEs                  ; Yes        ; |pong|movement_full:moveY|movement:move|s_current_state[1] ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |pong|collision:bump|next_y[7]                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: movement_full:moveX ;
++----------------+--------------+----------------------------------+
+; Parameter Name ; Value        ; Type                             ;
++----------------+--------------+----------------------------------+
+; width          ; 12           ; Signed Integer                   ;
+; init           ; 000000100000 ; Unsigned Binary                  ;
++----------------+--------------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: movement_full:moveX|movement:move ;
++----------------+--------------+------------------------------------------------+
+; Parameter Name ; Value        ; Type                                           ;
++----------------+--------------+------------------------------------------------+
+; width          ; 12           ; Signed Integer                                 ;
+; init           ; 000000100000 ; Unsigned Binary                                ;
++----------------+--------------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: movement_full:moveY ;
++----------------+-----------+-------------------------------------+
+; Parameter Name ; Value     ; Type                                ;
++----------------+-----------+-------------------------------------+
+; width          ; 9         ; Signed Integer                      ;
+; init           ; 000010000 ; Unsigned Binary                     ;
++----------------+-----------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: movement_full:moveY|movement:move ;
++----------------+-----------+---------------------------------------------------+
+; Parameter Name ; Value     ; Type                                              ;
++----------------+-----------+---------------------------------------------------+
+; width          ; 9         ; Signed Integer                                    ;
+; init           ; 000010000 ; Unsigned Binary                                   ;
++----------------+-----------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "movement_full:moveY" ;
++------------+-------+----------+-----------------+
+; Port       ; Type  ; Severity ; Details         ;
++------------+-------+----------+-----------------+
+; ext_change ; Input ; Info     ; Stuck at GND    ;
++------------+-------+----------+-----------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 128                         ;
+; cycloneiii_ff         ; 127                         ;
+;     ENA SCLR          ; 83                          ;
+;     ENA SLD           ; 5                           ;
+;     SCLR              ; 4                           ;
+;     SLD               ; 27                          ;
+;     plain             ; 8                           ;
+; cycloneiii_lcell_comb ; 329                         ;
+;     arith             ; 84                          ;
+;         2 data inputs ; 82                          ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 245                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 103                         ;
+;         3 data inputs ; 28                          ;
+;         4 data inputs ; 94                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.44                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+    Info: Processing started: Thu May 16 16:13:00 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pong -c pong
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/student/clignotante/vhdl/divider-entity.vhdl
+    Info (12023): Found entity 1: clock_divider File: /home/student/clignotante/vhdl/divider-entity.vhdl Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file /home/student/clignotante/vhdl/divider-behavior.vhdl
+    Info (12022): Found design unit 1: clock_divider-no_target_specific File: /home/student/clignotante/vhdl/divider-behavior.vhdl Line: 1
+Info (12021): Found 1 design units, including 0 entities, in source file /home/student/Desktop/tp78/vhdl/score-rtl.vhd
+    Info (12022): Found design unit 1: score-rtl File: /home/student/Desktop/tp78/vhdl/score-rtl.vhd Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/student/Desktop/tp78/vhdl/score-entity.vhd
+    Info (12023): Found entity 1: score File: /home/student/Desktop/tp78/vhdl/score-entity.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file /home/student/Desktop/tp78/vhdl/pong-rtl.vhd
+    Info (12022): Found design unit 1: pong-rtl File: /home/student/Desktop/tp78/vhdl/pong-rtl.vhd Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/student/Desktop/tp78/vhdl/pong-entity.vhd
+    Info (12023): Found entity 1: pong File: /home/student/Desktop/tp78/vhdl/pong-entity.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file /home/student/Desktop/tp78/vhdl/movement_full-rtl.vhd
+    Info (12022): Found design unit 1: movement_full-rtl File: /home/student/Desktop/tp78/vhdl/movement_full-rtl.vhd Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/student/Desktop/tp78/vhdl/movement_full-entity.vhd
+    Info (12023): Found entity 1: movement_full File: /home/student/Desktop/tp78/vhdl/movement_full-entity.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file /home/student/Desktop/tp78/vhdl/movement-rtl.vhd
+    Info (12022): Found design unit 1: movement-rtl File: /home/student/Desktop/tp78/vhdl/movement-rtl.vhd Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/student/Desktop/tp78/vhdl/movement-entity.vhd
+    Info (12023): Found entity 1: movement File: /home/student/Desktop/tp78/vhdl/movement-entity.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file /home/student/Desktop/tp78/vhdl/direction-rtl.vhd
+    Info (12022): Found design unit 1: direction-rtl File: /home/student/Desktop/tp78/vhdl/direction-rtl.vhd Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/student/Desktop/tp78/vhdl/direction-entity.vhd
+    Info (12023): Found entity 1: direction File: /home/student/Desktop/tp78/vhdl/direction-entity.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file /home/student/Desktop/tp78/vhdl/debouncer-rtl.vhd
+    Info (12022): Found design unit 1: debouncer-rtl File: /home/student/Desktop/tp78/vhdl/debouncer-rtl.vhd Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/student/Desktop/tp78/vhdl/debouncer-entity.vhd
+    Info (12023): Found entity 1: debouncer File: /home/student/Desktop/tp78/vhdl/debouncer-entity.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file /home/student/Desktop/tp78/vhdl/collision-rtl.vhd
+    Info (12022): Found design unit 1: collision-rtl File: /home/student/Desktop/tp78/vhdl/collision-rtl.vhd Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/student/Desktop/tp78/vhdl/collision-entity.vhd
+    Info (12023): Found entity 1: collision File: /home/student/Desktop/tp78/vhdl/collision-entity.vhd Line: 4
+Info (12021): Found 1 design units, including 0 entities, in source file /home/student/Desktop/tp78/vhdl/bat-rtl.vhd
+    Info (12022): Found design unit 1: bat-rtl File: /home/student/Desktop/tp78/vhdl/bat-rtl.vhd Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/student/Desktop/tp78/vhdl/bat-entity.vhd
+    Info (12023): Found entity 1: bat File: /home/student/Desktop/tp78/vhdl/bat-entity.vhd Line: 5
+Info (12127): Elaborating entity "pong" for the top level hierarchy
+Info (12128): Elaborating entity "collision" for hierarchy "collision:bump" File: /home/student/Desktop/tp78/vhdl/pong-rtl.vhd Line: 84
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:button_down" File: /home/student/Desktop/tp78/vhdl/pong-rtl.vhd Line: 92
+Info (12128): Elaborating entity "bat" for hierarchy "bat:bat_disp" File: /home/student/Desktop/tp78/vhdl/pong-rtl.vhd Line: 106
+Info (12128): Elaborating entity "score" for hierarchy "score:scores" File: /home/student/Desktop/tp78/vhdl/pong-rtl.vhd Line: 114
+Info (12128): Elaborating entity "movement_full" for hierarchy "movement_full:moveX" File: /home/student/Desktop/tp78/vhdl/pong-rtl.vhd Line: 124
+Info (12128): Elaborating entity "direction" for hierarchy "movement_full:moveX|direction:direct" File: /home/student/Desktop/tp78/vhdl/movement_full-rtl.vhd Line: 27
+Info (12128): Elaborating entity "movement" for hierarchy "movement_full:moveX|movement:move" File: /home/student/Desktop/tp78/vhdl/movement_full-rtl.vhd Line: 34
+Info (12128): Elaborating entity "movement_full" for hierarchy "movement_full:moveY" File: /home/student/Desktop/tp78/vhdl/pong-rtl.vhd Line: 134
+Info (12128): Elaborating entity "movement" for hierarchy "movement_full:moveY|movement:move" File: /home/student/Desktop/tp78/vhdl/movement_full-rtl.vhd Line: 34
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:clock_div" File: /home/student/Desktop/tp78/vhdl/pong-rtl.vhd Line: 144
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 448 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 124 output pins
+    Info (21061): Implemented 320 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 968 megabytes
+    Info: Processing ended: Thu May 16 16:13:33 2019
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:16
+
+
